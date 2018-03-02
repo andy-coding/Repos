@@ -1,0 +1,14 @@
+﻿@model RestaurantBooker.Website.ViewModels.RestaurantViewModel
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>Restaurants</h2>
+
+@foreach (var restaurant in Model.Restaurants)
+{
+    <p>@restaurant.Name</p>
+}
+
+
