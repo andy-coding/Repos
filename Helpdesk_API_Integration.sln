@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpdesk_API_Integration", "Helpdesk_API_Integration\Helpdesk_API_Integration.csproj", "{8F897F9B-08C3-47FC-923C-037FBCE426A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpdesk_API_Integration.Tests", "Helpdesk_API_Integration.Tests\Helpdesk_API_Integration.Tests.csproj", "{796BE674-5FE2-462E-B6CB-06A44565F663}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F897F9B-08C3-47FC-923C-037FBCE426A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F897F9B-08C3-47FC-923C-037FBCE426A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F897F9B-08C3-47FC-923C-037FBCE426A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F897F9B-08C3-47FC-923C-037FBCE426A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{796BE674-5FE2-462E-B6CB-06A44565F663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{796BE674-5FE2-462E-B6CB-06A44565F663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{796BE674-5FE2-462E-B6CB-06A44565F663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{796BE674-5FE2-462E-B6CB-06A44565F663}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF572D1A-1676-4A4F-A01E-510AB42C5166}
+	EndGlobalSection
+EndGlobal

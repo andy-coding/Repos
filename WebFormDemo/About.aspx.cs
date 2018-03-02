@@ -13,5 +13,10 @@ namespace WebFormDemo
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Label2.Text = TextBox1.Text;
+        }
     }
 }
