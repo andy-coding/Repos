@@ -1,2 +1,41 @@
 ﻿body {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+background-color: blueviolet;
+}
+
+
+.hd1 {
+    background-color: brown;
+    color: #fff;
+    font-size: larger;
+    text-align: right;
+}
+
+.form {
+    background-color: blue;
+    margin: 10px auto;
+    max-width: 600px;
+    padding: 20px;
+    font: 13px;
+}
+
+.form li {
+    background-color: aqua;
+    padding: 0;
+    display: block;
+    list-style: none;
+    margin: 10px 0px;
+}
+            
+.required {
+    color: red;
+}
+
+.field-long {
+    width: 80%;
+}
+
+.multiline-long {
+    width: 80%;
+    height: 300px;
 }

@@ -1,0 +1,50 @@
+﻿@{
+	Layout = "../Shared/_LayoutNew.cshtml";
+	ViewBag.Title = "New Request";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+	<header>
+		<div class="h1">
+			<h1>@ViewBag.Title</h1>
+		</div>
+	</header>
+	<nav>
+	</nav>
+	<main>
+		<div>
+			<form>
+				<ul class="form">
+					<li>
+						Name<input type="text" name="name" class="field-long" />
+					</li>
+					<li>Site
+						<select name="site">
+							<option value="opt1">option 1</option>
+							<option value="opt2">option 2</option>
+							<option value="opt3">option 3</option>
+						</select>
+					</li>
+					<li>
+						Category<input type="text" name="category" class="field-long" />
+					</li>
+					<li>
+						Subject<input type="text" name="subject" class="field-long" />
+					</li>
+					<li>
+						Description<input type="text" name="description" class="multiline-long" />
+					</li>
+					<li><input type="submit"/></li>
+				</ul>
+			</form>
+		</div>
+	</main>
+</body>
+</html>

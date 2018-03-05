@@ -7,6 +7,19 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Helpdesk_API_Integration;
 using Helpdesk_API_Integration.Controllers;
 
+namespace Helpdesk_API_Integration.Controllers.Tests
+{
+    [TestClass()]
+    public class HomeControllerTest
+    {
+        [TestMethod()]
+        public void GetCategoriesTest()
+        {
+            Assert.Fail();
+        }
+    }
+}
+
 namespace Helpdesk_API_Integration.Tests.Controllers
 {
     [TestClass]
@@ -50,5 +63,20 @@ namespace Helpdesk_API_Integration.Tests.Controllers
             // Assert
             Assert.IsNotNull(result);
         }
+
+        [TestMethod]
+        public void GetCategories()
+        {
+            // Arrange
+            HomeController controller = new HomeController();
+
+            // Act
+            //ViewResult result = controller.GetCategories() as ViewResult;
+            //Console.WriteLine("CategoryResponse=" + CategoryResponse);
+
+            // Assert
+            //Assert.IsNotNull(result);
+        }
+        
     }
 }
