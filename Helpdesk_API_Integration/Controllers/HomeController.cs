@@ -152,7 +152,7 @@ namespace Helpdesk_API_Integration.Controllers
         {
             var client = new RestSharp.RestClient("http://itildemo.servicedeskplus.com");
             //client.Authenticator = new SimpleAuthenticator("username", "demo", "Apikey", "F98A31E4-5C0D-40E3-B5CC-B4B721438476");
-            var request = new RestRequest("sdpapi/admin/category", Method.GET);
+            var request = new RestRequest("sdpapi/admin/category", Method.POST);
             request.AddParameter("OPERATION_NAME", "GET_ALL");
             request.AddParameter("TECHNICIAN_KEY", "A8321E89-6A8A-4C0E-97E0-C21E5CE4ECE9");
             var response = client.Execute<List<category>>(request).Data;
@@ -182,7 +182,7 @@ namespace Helpdesk_API_Integration.Controllers
 
             var client = new RestSharp.RestClient("http://itildemo.servicedeskplus.com");
             //client.Authenticator = new SimpleAuthenticator("username", "demo", "Apikey", "F98A31E4-5C0D-40E3-B5CC-B4B721438476");
-            var request = new RestRequest("sdpapi/admin/category/1", Method.GET);
+            var request = new RestRequest("sdpapi/admin/category/1", Method.POST);
             request.AddParameter("OPERATION_NAME", "GET");
             request.AddParameter("TECHNICIAN_KEY", "A8321E89-6A8A-4C0E-97E0-C21E5CE4ECE9");
             var queryResult = client.Execute<category>(request).Data;
