@@ -18,5 +18,6 @@ namespace Gighub.Models
 
         [Required]
         public Genre Genre { get; set; }
+    
     }
 }
