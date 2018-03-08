@@ -174,8 +174,6 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RestClientController.cs" />
-    <Compile Include="Controllers\SundayMVCController.cs" />
-    <Compile Include="Controllers\SundayWebAPI2Controller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -229,18 +227,12 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Viewpage.cshtml" />
-    <Content Include="Views\Home\Viewpagewithlayout.cshtml" />
-    <Content Include="Views\Home\PartialPage.cshtml" />
     <Content Include="Views\Shared\_LayoutNew.cshtml" />
-    <Content Include="Views\Home\IndexNew2.cshtml" />
-    <Content Include="Views\Home\NewRequest.cshtml" />
-    <Content Include="Views\Home\GetCategories.cshtml" />
-    <Content Include="Views\Home\Categories.cshtml" />
+    <Content Include="Views\Category\ListCategories.cshtml" />
     <Content Include="Views\Category\Cats.cshtml" />
     <Content Include="Views\RestClient\GetCats.cshtml" />
-    <Content Include="Views\Home\IndexNew3.cshtml" />
-    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Category\IndexNew3.cshtml" />
+    <Content Include="Views\Category\DetailCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
