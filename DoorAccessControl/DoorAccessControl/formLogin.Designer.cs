@@ -1,6 +1,6 @@
 ﻿namespace DoorAccessControl
 {
-    partial class formLogin
+    partial class FormLogin
     {
         /// <summary>
         /// Required designer variable.
