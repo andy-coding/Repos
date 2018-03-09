@@ -14,6 +14,7 @@ namespace Helpdesk_API_Integration.Controllers
 {
     public class CategoryController : Controller
     {
+
         private readonly ICategoryRepository _repository;
 
         public void debugOutput(string strDebugText)
@@ -31,22 +32,10 @@ namespace Helpdesk_API_Integration.Controllers
 
         public CategoryController()
         {
+            var response2 = new RestResponse<category>();
 
-            //_repository = new CategoryRepository;
+
         }
-
-
-        //// GET api/products
-        //public IEnumerable<category> GetCategories()
-        //{
-        //    return _repository.GetAll();
-        //}
-
-        // GET api/products/5
-        //public category DetailCategory(int id)
-        //{
-        //    return _repository.Get(id);
-        //}
 
 
         public async Task<ActionResult> GetCategoriesOld()
@@ -83,6 +72,83 @@ namespace Helpdesk_API_Integration.Controllers
             return View(Categories);
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<category> ListCategories()
+        {
+            var client = new RestSharp.RestClient("http://itildemo.servicedeskplus.com/");
+
+            var request = new RestRequest("sdpapi/admin/category", Method.GET) { RequestFormat = DataFormat.Json }; ;
+            request.AddParameter("OPERATION_NAME", "GET_ALL");
+            request.AddParameter("TECHNICIAN_KEY", "D86DF679-FE1F-44ED-9156-D69E1EBF8FAD");
+
+            var response = client.Execute<List<category>>(request);
+
+            if (response.Data == null)
+                throw new Exception(response.ErrorMessage);
+
+            debugOutput(request.Parameters.ToString());
+
+
+           // var response2 = client.Execute<category>(request);
+            //var name = response2.Data.NAME.ToString();
+
+            //debugOutput(response.StatusCode.ToString());
+            //var response = new List<category> { new category { ID = 1, NAME = "bob", ISDELETED = false } };
+
+
+            //try
+            //{
+            //    System.Diagnostics.Debug.Write(queryResult.ToString() + Environment.NewLine);
+            //}
+            //catch (Exception ex)
+            //{
+            //    System.Diagnostics.Debug.Write(ex.Message + Environment.NewLine);
+            //}
+
+            //debugOutput(mycat.ToString());
+
+
+            return View();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult DetailCategory()
+        {
+
+            var client = new RestSharp.RestClient("http://itildemo.servicedeskplus.com");
+
+            var request = new RestRequest("sdpapi/admin/category/2", Method.GET) { RequestFormat = DataFormat.Json };
+            request.AddParameter("OPERATION_NAME", "GET");
+            request.AddParameter("TECHNICIAN_KEY", "D86DF679-FE1F-44ED-9156-D69E1EBF8FAD");
+            debugOutput(request.Parameters.ToString());
+
+            var queryResult = client.Execute<category>(request).Data;
+            //var queryResult = new category { ID = 1, NAME = "bob", ISDELETED = false };
+
+            return View(queryResult);
+        }
+
+
+
+        //// PUT api/products/5
+        //public void Put(int id, [FromBody]category value)
+        //{
+        //    _repository.Update(id, value);
+        //}
+
+        // DELETE api/products/5
+        //public void Delete(int id)
+        //{
+        //    _repository.Delete(id);
+        //}
+
         //public ActionResult Categories()
 
         ////NOTE this used for reference: http://dkdevelopment.net/2010/05/18/dropbox-api-and-restsharp-for-a-c-developer/
@@ -98,29 +164,9 @@ namespace Helpdesk_API_Integration.Controllers
         //    request.AddParameter("demo", "16AFE541-ED6C-41A6-BCF1-8FB4BDA8F3DA"); // adds to POST or URL querystring based on Method
         //    request.AddParameter("oauth_consumer_key", _apiKey);
 
-
-
-
         //    //var queryResult = client.Execute<List<category>>(request).Data;
 
-        //    request.AddParameter("demo", "16AFE541-ED6C-41A6-BCF1-8FB4BDA8F3DA"); // adds to POST or URL querystring based on Method
-
-        //    //test result to debug
-        //    var queryResult = new List<category>
-        //    {
-        //        new category
-        //        {
-        //            ID=1,
-        //            NAME="cat1",
-        //            ISDELETED = false
-        //        }
-        //    };
-
-
         //    //request.AddUrlSegment("id", "123"); // replaces matching token in request.Resource
-
-        //    // easily add HTTP Headers
-        //    request.AddHeader("demo", "16AFE541-ED6C-41A6-BCF1-8FB4BDA8F3DA");
 
         //    // add files to upload (works with compatible verbs)
         //    //request.AddFile(path);
@@ -149,76 +195,6 @@ namespace Helpdesk_API_Integration.Controllers
 
         //    return View();
         //}
-
-
-        // GET: SundayMVC
-        public ActionResult ListCategories()
-        {
-            var client = new RestSharp.RestClient("http://helpdesk.testroniclabs.com");
-
-            var request = new RestRequest("sdpapi/admin/category", Method.GET);
-            request.AddParameter("OPERATION_NAME", "GET_ALL");
-            request.AddParameter("TECHNICIAN_KEY", "D86DF679-FE1F-44ED-9156-D69E1EBF8FAD");
-
-            var response = client.Execute<List<category>>(request).Data;
-
-            debugOutput(request.Parameters.ToString());
-
-
-            IRestResponse<category> response2 = client.Execute<category>(request);
-            var name = response2.Data.NAME;
-
-            //debugOutput(response.StatusCode.ToString());
-            //var response = new List<category> { new category { ID = 1, NAME = "bob", ISDELETED = false } };
-
-
-            //try
-            //{
-            //    System.Diagnostics.Debug.Write(queryResult.ToString() + Environment.NewLine);
-            //}
-            //catch (Exception ex)
-            //{
-            //    System.Diagnostics.Debug.Write(ex.Message + Environment.NewLine);
-            //}
-
-            //debugOutput(mycat.ToString());
-
-
-            return View(response2);
-        }
-
-        // GET: SundayMVC/Details/5
-        public ActionResult DetailCategory()
-        {
-
-            var client = new RestSharp.RestClient("http://helpdesk.testroniclabs.com");
-
-            var request = new RestRequest("sdpapi/admin/category/2", Method.GET);
-            request.AddParameter("OPERATION_NAME", "GET");
-            request.AddParameter("TECHNICIAN_KEY", "D86DF679-FE1F-44ED-9156-D69E1EBF8FAD");
-            debugOutput(request.Parameters.ToString());
-
-            var queryResult = client.Execute<category>(request).Data;
-            //var queryResult = new category { ID = 1, NAME = "bob", ISDELETED = false };
-
-            return View(queryResult);
-        }
-
-
-
-        //// PUT api/products/5
-        //public void Put(int id, [FromBody]category value)
-        //{
-        //    _repository.Update(id, value);
-        //}
-
-        // DELETE api/products/5
-        //public void Delete(int id)
-        //{
-        //    _repository.Delete(id);
-        //}
-
-
     }
 }
 
