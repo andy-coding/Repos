@@ -17,13 +17,13 @@ namespace Helpdesk_API_Integration.Models
         DELETE
     }
 
-    class RestClient
+    class RestClient_old
     {
         public string endPoint{ get; set; }
         public httpverb httpMethod { get; set; }
 
 
-        public RestClient()
+        public RestClient_old()
         {
             endPoint = "http://itildemo.servicedeskplus.com";
             httpMethod = httpverb.GET;

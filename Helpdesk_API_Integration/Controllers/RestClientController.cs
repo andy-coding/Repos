@@ -28,7 +28,7 @@ namespace Helpdesk_API_Integration.Controllers
         // GET: RestClient
         public ActionResult GetCats()
         {
-            RestClient rClient = new RestClient();
+            RestClient_old rClient = new RestClient_old();
             //rClient.endPoint = txtRequestURI.Text;
 
             debugOutput("Rest client created");

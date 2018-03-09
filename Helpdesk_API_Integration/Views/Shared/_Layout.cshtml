@@ -19,11 +19,13 @@
                 @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("List Categories", "ListCategories", "Category")</li>
-                    <li>@Html.ActionLink("Category Details", "DetailCategory", "Category")</li>
-                </ul>
+				<ul class="nav navbar-nav">
+					<li>@Html.ActionLink("Home", "Index", "Home")</li>
+					<li>@Html.ActionLink("Category List", "Index", "Category")</li>
+					<li>@Html.ActionLink("Category Details", "DatailCategory", "Category")</li>
+
+
+				</ul>
             </div>
         </div>
     </div>

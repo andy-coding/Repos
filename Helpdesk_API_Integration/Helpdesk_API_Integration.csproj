@@ -171,21 +171,26 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CategoryController_old.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RestClientController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\category.cs" />
+    <Compile Include="Helper\ICategoryRestClient.cs" />
+    <Compile Include="Helper\CategoryRestClient.cs" />
+    <Compile Include="Models\category_old.cs" />
     <Compile Include="Models\Impact.cs" />
     <Compile Include="Models\Priority.cs" />
     <Compile Include="Models\Request.cs" />
-    <Compile Include="Models\RestClient.cs" />
+    <Compile Include="Models\RestClient_old.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Site.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Models\SubCategory.cs" />
     <Compile Include="Models\Urgency.cs" />
+    <Compile Include="Models\Uri.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -229,15 +234,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutNew.cshtml" />
     <Content Include="Views\Category\ListCategories.cshtml" />
-    <Content Include="Views\Category\Cats.cshtml" />
     <Content Include="Views\RestClient\GetCats.cshtml" />
     <Content Include="Views\Category\IndexNew3.cshtml" />
     <Content Include="Views\Category\DetailCategory.cshtml" />
-    <Content Include="Views\Category\trashme.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\SundayMVCController\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

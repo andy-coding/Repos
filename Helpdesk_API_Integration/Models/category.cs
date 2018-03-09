@@ -1,28 +1,56 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Net;
 using System.Web;
 
 namespace Helpdesk_API_Integration.Models
 {
-    public interface ICategoryRepository
+    public class Category
     {
-        IEnumerable<category> GetAll();
-        category Get(int ID);
-        //void Create(category category);
-        //void Update(int ID, category category);
-        //void Delete(int ID);
-    }
+        public int id { get; set; }
+        private bool isdeleted { get; set; }
+        public string name { get; set; }
+        public string description { get; set; }
 
-    public class category
-    {
-        private bool _iSDELETED;
+        //[Required]
+        //[Display(Name = "Initial date")]
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
+        //public DateTime InitialDate { get; set; }
 
-        public int ID { get; set; }
-        public string NAME { get; set; }
-        public bool ISDELETED { get => _iSDELETED; set => _iSDELETED = value; }
-        public string DESCRIPTION { get; set; }
+        //[Required]
+        //[Display(Name = "End date")]
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
+        //public DateTime EndDate { get; set; }
+
+
+
+       // [Required]
+       // [Display(Name = "Order number")]
+       // public int OrderNumber { get; set; }
+
+       // [Required]
+       // [Display(Name = "Is dirty")]
+       // public bool IsDirty { get; set; }
+
+       // [Required, StringLength(15)]
+       // [Display(Name = "Data Server IP")]
+       // [RegularExpression(@"^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.)
+       //{3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$",
+       // ErrorMessage = "Data Server IP should be in the form of 255.255.255")]
+       // public string IP { get; set; }
+
+       // [Required]
+       // [Display(Name = "Record data type")]
+       // [RegularExpression(@"^([1-2])$",
+       // ErrorMessage = "Record Data Type should be 1 or 2")]
+       // public int Type { get; set; }
+
+       // [Display(Name = "Record identifier")]
+       // [RegularExpression(@"^([0-9])$",
+       // ErrorMessage = "Record identifier should be between 0 to 9")]
+       // public int RecordIdentifier { get; set; }
     }
 }
