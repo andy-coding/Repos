@@ -112,7 +112,7 @@ namespace Helpdesk_API_Integration.Controllers
             //debugOutput(mycat.ToString());
 
 
-            return View(response);
+            return View();
         }
 
         /// <summary>

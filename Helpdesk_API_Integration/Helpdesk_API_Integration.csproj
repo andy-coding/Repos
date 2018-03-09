@@ -233,6 +233,7 @@
     <Content Include="Views\RestClient\GetCats.cshtml" />
     <Content Include="Views\Category\IndexNew3.cshtml" />
     <Content Include="Views\Category\DetailCategory.cshtml" />
+    <Content Include="Views\Category\trashme.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
